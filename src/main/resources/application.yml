@@ -1,1 +1,21 @@
+spring:
+  profiles:
+    default: dev
 
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yellowsunn/my-cloud-config-repo
+          username: yellowsunn
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
